@@ -238,6 +238,12 @@ RCT_EXPORT_METHOD(stopPlaying)
   }
 }
 
+RCT_EXPORT_METHOD(getCurrentTime:(RCTResponseSenderBlock)callback)
+{
+  NSTimeInterval currentTime = _audioRecorder.currentTime;
+  callback(@[[NSNull null], [NSNumber numberWithDouble:currentTime]]);
+}
+
 RCT_EXPORT_METHOD(checkAuthorizationStatus:(RCTPromiseResolveBlock)resolve reject:(__unused RCTPromiseRejectBlock)reject)
 {
   AVAudioSessionRecordPermission permissionStatus = [[AVAudioSession sharedInstance] recordPermission];

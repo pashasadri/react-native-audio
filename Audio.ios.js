@@ -132,6 +132,11 @@ var AudioRecorder = {
   stopPlaying: function() {
     AudioRecorderManager.stopPlaying();
   },
+  getCurrentTime: function(callback) {
+    AudioRecorderManager.getCurrentTime((error, currentTime) => {
+      callback(currentTime);
+    })
+  },
   checkAuthorizationStatus: AudioRecorderManager.checkAuthorizationStatus,
   requestAuthorization: AudioRecorderManager.requestAuthorization,
 };
