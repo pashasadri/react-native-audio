@@ -139,7 +139,7 @@ RCT_EXPORT_METHOD(playWithUrl:(NSURL *) url options:(NSDictionary *)options)
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:nil];
   } else if ([sessionCategory isEqualToString:@"PlayAndRecord"]) {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [[AVAudioSession] sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
+    [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
   } else if ([sessionCategory isEqualToString:@"AudioProcessing"]) {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAudioProcessing error:nil];
   } else if ([sessionCategory isEqualToString:@"MultiRoute"]) {
